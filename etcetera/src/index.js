@@ -8,11 +8,12 @@ import { Provider } from 'react-redux';
 let reducer = (oldState, action) => {
     console.log(action)
     if (action.type === 'ADD_TO_CART') {
-        // console.log(oldState.cartItems)
-        // // console.log(action.id)
-        // let updatedCart = [action.id].concat(oldState.cartItems);
-        // let 
-        return oldState
+        return (
+        {... oldState, 
+            cartItems : [
+                ...oldState.cartItems, action.id
+            ]})
+        
     } else {
         return oldState
     }
